@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block conteudo %}
+<head>
+  <title>Tela de Login</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <form method="POST" action="/autenticar">
+    <h2>Tela de Login</h2>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul id="messages" class="list-unstyled">
+      {% for message in messages %}
+      <li class="alert alert-success">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario" required />
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required />
+    <input type="submit" value="Entrar" />
+    <p></p>
+    <input type="submit" value="Esqueci a senha" />
+  </form>
+  <form action="{{ url_for('voltar_home') }}" method="get">
+    <input type="submit" value="Voltar para home" />
+  </form>
+</body>
+{% endblock conteudo %}

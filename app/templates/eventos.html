@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% block conteudo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='evento.css') }}" />
+<body>
+  <main>
+    <section>
+    </br></br></br>
+      <h2>Próximos eventos</h2>
+      <ul>
+        {% for evento in eventos %}
+        <li>
+          <h3>{{ evento.titulo }}</h3>
+          <p>Data: {{ evento.data }}</p>
+          <p>Local: {{ evento.local }}</p>
+          <p>Descrição: {{ evento.descricao }}</p>
+          <p>Ingressos: {{ evento.ingressos }}</p>
+          <p>Preço: {{ evento.preco }}</p>
+          <p>Organizador: {{ evento.organizador }}</p>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+    <section>
+      </br></br>
+      <h2>Eventos passados</h2>
+      <ul>
+        <li>
+          <h3>Concerto de Jazz</h3>
+          <p>Data: 15 de fevereiro de 2023</p>
+          <p>Local: Teatro Municipal</p>
+          <p>
+            Descrição: Um concerto de jazz com artistas locais e convidados
+            especiais.
+          </p>
+        </li>
+        <li>
+          <h3>Festival de Cinema</h3>
+          <p>Data: 1 a 10 de janeiro de 2023</p>
+          <p>Local: Cineplex</p>
+          <p>
+            Descrição: Um festival de cinema com exibições de filmes
+            independentes e clássicos.
+          </p>
+        </li>
+      </ul>
+    </section>
+  <form action="{{ url_for('voltar_home_logado') }}" method="get">
+    <input type="submit" value="Voltar para home" />
+  </form>
+  <br /><br /><br />
+  </main>
+</body>
+{% endblock conteudo %}

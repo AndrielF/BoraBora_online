@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <title>Bora Bora</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='home.css') }}"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <h1>Seja bem vindo, {{ usuario }}!</h1>
+      <p>A Bora Bora agradece o seu acesso.</p>
+    </div>
+    {% with messages = get_flashed_messages() %} {% if messages %}
+    <ul id="messages" class="flashes">
+      {% for message in messages %}
+      <li class="alert alert-success">{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+    <div style="display: flex">
+      <div class="column">
+        <form action="{{ url_for('validar_ingresso') }}" method="get">
+          <input type="submit" class="button1" value="Validar ingresso" />
+        </form>
+        <form action="{{ url_for('criar_evento') }}" method="get">
+          <input type="submit" class="button1" value="Criar evento" />
+        </form>
+        <form action="{{ url_for('editar_evento') }}" method="get">
+          <input type="submit" class="button1" value="Editar evento" />
+        </form>
+
+        <form action="{{ url_for('excluir_evento') }}" method="get">
+          <input type="submit" class="button1" value="Excluir evento" />
+        </form>
+      </div>
+      <div class="column2">
+        <form action="{{ url_for('sign_out') }}" method="get">
+          <input type="submit" class="button1" value="Sign-out" />
+        </form>
+        <form action="{{ url_for('editar_organizador') }}" method="get">
+          <input type="submit" class="button1" value="Editar conta" />
+        </form>
+        <form action="{{ url_for('excluir_conta_organizador') }}" method="get">
+          <input type="submit" class="button1" value="Excluir conta" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

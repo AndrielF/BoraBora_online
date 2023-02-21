@@ -1,0 +1,81 @@
+header {
+  background-color: #4203a8;
+  padding: 20px;
+  border-bottom: 1px solid #000000e5;
+}
+
+h1 {
+  color: #000000;
+  font-size: 24px;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px;
+  margin: 50px auto;
+}
+h2 {
+  text-align: center;
+  margin-top: 0;
+}
+input[type="text"],
+input[type="number"],
+input[type="password"],
+input[type="date"] {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  width: 100%;
+}
+input[type="submit"] {
+  background-color: #1242df;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  width: 100%;
+}
+input[type="submit"]:hover {
+  background-color: #4203a8;
+}
+
+.form1,
+.form2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+footer {
+  background-color: #4203a8;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #000000;
+  margin-top: 20px;
+}
+
+.h1 {
+  color: #000000;
+  font-size: 36px;
+  text-align: center;
+  margin: 15;
+}
+
+.valido {
+  color: green;
+}
+
+.reprovado {
+  color: red;
+}

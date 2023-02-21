@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block conteudo %}
+<head>
+  <meta charset="utf-8" />
+  <title>Bora Code</title>
+</head>
+<body>
+  <br /><br />
+  <h2>Bem-vindo ao Web Service Bora Code</h2>
+  <br />
+</body>
+<body>
+  <br />
+  <h2>Validador</h2>
+  <form action="/resultado_validar" method="post">
+    <label for="codigo">Código:</label>
+    <input type="text" id="codigo" name="codigo" />
+    <input type="submit" value="Validar" />
+  </form>
+  <form action="{{ url_for('voltar_home_logado_org') }}" method="get">
+    <input type="submit" value="Voltar para home" />
+  </form>
+</body>
+{% endblock conteudo %}

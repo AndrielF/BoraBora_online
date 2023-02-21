@@ -1,0 +1,53 @@
+{% extends 'base.html' %} {% block conteudo %}
+<head>
+  <title>Criar usuário</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul id="messages" class="list-unstyled">
+    {% for message in messages %}
+    <li class="alert alert-success">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+
+  <form action="/criar-organizador" method="POST">
+    <h2>Criar usuário</h2>
+
+    <label for="email">E-mail:</label>
+    <input type="text" id="email" name="email" required />
+
+    <label for="telefone">Telefone:</label>
+    <input type="number" id="telefone" name="telefone" required />
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required />
+
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" id="cnpj" name="cnpj" required />
+
+    <label for="ramo">Ramo:</label>
+    <input type="text" id="ramo" name="ramo" required />
+
+    <label for="usuario">Usuário:</label>
+    <input type="text" id="usuario" name="usuario" required />
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required />
+
+    <label for="confirmar_senha">Confirmar senha:</label>
+    <input
+      type="password"
+      id="confirmar_senha"
+      name="confirmar_senha"
+      required
+    />
+    <input type="submit" value="Criar usuário" />
+  </form>
+  <form action="{{ url_for('voltar_home') }}" method="get">
+    <input type="submit" value="Voltar para Home" />
+  </form>
+</body>
+{% endblock conteudo %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block conteudo %}
+<head>
+  <meta charset="utf-8" />
+  <title>Resultado</title>
+</head>
+<body>
+  <br /><br /><br /><br /><br />
+  <h2>Resultado da Validação:</h2>
+  <h2><div class="{{ resultado_css }}">{{ resultado }}</div></h2>
+  <br /><br /><br /><br /><br />
+  <form class="form1" action="{{ url_for('validar_ingresso') }}" method="get">
+    <input type="submit" class="button1" value="Validar outro ingresso" />
+  </form>
+  <form
+    class="form2"
+    action="{{ url_for('voltar_home_logado_org') }}"
+    method="get"
+  >
+    <input type="submit" value="Voltar para home" />
+  </form>
+  <br /><br /><br /><br />
+</body>
+{% endblock conteudo %}

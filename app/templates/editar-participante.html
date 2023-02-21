@@ -1,0 +1,98 @@
+{% extends 'base.html' %} {% block conteudo %}
+<head>
+  <title>Editar participante</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  {% with messages = get_flashed_messages() %} {% if messages %}
+  <ul id="messages" class="list-unstyled">
+    {% for message in messages %}
+    <li class="alert alert-success">{{ message }}</li>
+    {% endfor %}
+  </ul>
+  {% endif %} {% endwith %}
+
+  <form action="/salvar-edicao-participante" method="POST">
+    <h2>Editar usuário</h2>
+
+    <label for="email">E-mail:</label>
+    <input
+      type="text"
+      id="email"
+      name="email"
+      value="{{ usuario.email }}"
+      required
+    />
+
+    <label for="telefone">Telefone:</label>
+    <input
+      type="number"
+      id="telefone"
+      name="telefone"
+      value="{{ usuario.telefone }}"
+      required
+    />
+
+    <label for="nome">Nome:</label>
+    <input
+      type="text"
+      id="nome"
+      name="nome"
+      value="{{ usuario.nome }}"
+      required
+    />
+
+    <label for="cpf">CPF:</label>
+    <input type="text" id="cpf" name="cpf" value="{{ usuario.cpf }}" required />
+
+    <label for="nascimento">Data de Nascimento:</label>
+    <input
+      type="number"
+      id="nascimento"
+      name="nascimento"
+      value="{{ usuario.nascimento }}"
+      required
+    />
+
+    <label for="genero">Gênero:</label>
+    <input
+      type="text"
+      id="genero"
+      name="genero"
+      value="{{ usuario.genero }}"
+      required
+    />
+
+    <label for="usuario">Usuário:</label>
+    <input
+      type="text"
+      id="usuario"
+      name="usuario"
+      value="{{ usuario.usuario }}"
+      required
+    />
+
+    <label for="senha">Senha:</label>
+    <input
+      type="password"
+      id="senha"
+      name="senha"
+      value="{{ usuario.senha }}"
+      required
+    />
+
+    <label for="confirmar_senha">Confirmar senha:</label>
+    <input
+      type="password"
+      id="confirmar_senha"
+      name="confirmar_senha"
+      required
+    />
+    <input type="submit" value="Salvar edição" />
+  </form>
+  <form action="{{ url_for('voltar_home_logado') }}" method="get">
+    <input type="submit" value="Voltar para Home" />
+  </form>
+</body>
+{% endblock conteudo %}
