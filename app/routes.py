@@ -178,17 +178,11 @@ def excluir_evento():
     return render_template('home-logado-organizacao.html', usuario=session['usuario_logado'])
 
 
-
-
-
-
-
-
 @app.route("/editar-organizador", methods=['GET', 'POST'])
 def editar_organizador():
     usuario = session['usuario_logado']
     usuario = organizadores.query.filter_by(usuario=usuario).first()
-    return render_template("editar-organizador.html", usuario=usuario)
+    return render_template("editar-organizador.html", usuario=usuario.nome)
 
 
 @app.route("/salvar_edicao_organizador", methods=['GET', 'POST'])
@@ -214,13 +208,6 @@ def excluir_conta_organizador():
     db.session.commit()
     flash('Conta excluída com sucesso')
     return redirect(url_for('home'))
-
-
-
-
-
-
-
 
 
 
